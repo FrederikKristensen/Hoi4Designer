@@ -2,9 +2,10 @@ import './App.css';
 import Select from 'react-select';
 import light_chassis from './data/light_chassis';
 import engines from './data/tank_engines';
-import suspension from './data/tank_suspension';
+import suspension from './data/tank_suspensions';
 import armor from './data/tank_armor';
-import turret from './data/tank_turret';
+import turret from './data/tank_turrets';
+import armanents from './data/tank_armanents';
 
 function App() {
   return (
@@ -21,7 +22,16 @@ function App() {
               )}
             />
           </div>
-          <div>2</div>
+          <div className="Armanent">
+            <Select
+              options={armanents}
+              formatOptionLabel={(a) => (
+                <div className="Armanent-option">
+                  <img src={a.image} alt="" />
+                </div>
+              )}
+            />
+          </div>
           <div>3</div>
           <div>4</div>
           <div>5</div>
