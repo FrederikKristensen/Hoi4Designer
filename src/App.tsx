@@ -10,7 +10,7 @@ import armanents from './data/tank_armanents';
 function App() {
   return (
     <>
-      <div className="grid grid-rows-3 bg-gray-300 m-6 p-2 rounded-md">
+      <div className="grid grid-rows-auto bg-gray-300 m-6 p-2 rounded-md">
         <div className="grid grid-cols-6 gap-x-1 p-1">
           <div className="turret">
             <Select
@@ -24,6 +24,7 @@ function App() {
               components={{
                 DropdownIndicator: () => null,
               }}
+              placeholder=""
               options={turrets}
               formatOptionLabel={(a) => (
                 <div className="flex justify-center">
@@ -44,6 +45,7 @@ function App() {
               components={{
                 DropdownIndicator: () => null,
               }}
+              placeholder=""
               options={armanents}
               formatOptionLabel={(a) => (
                 <div className="flex justify-center">
@@ -57,11 +59,11 @@ function App() {
           <div>5</div>
           <div>6</div>
         </div>
-        <div className="Chassis p-1">
+        <div className="Chassis p-1 m-0">
           <Select
             unstyled
             classNames={{
-              control: () => 'bg-slate-300 border border-gray h-15 p-1',
+              control: () => 'bg-slate-300 border border-gray h-18 p-1',
               menu: () => 'bg-slate-200 flex justify-center',
               option: () => 'p-4',
               input: () => 'caret-transparent',
@@ -69,10 +71,11 @@ function App() {
             components={{
               DropdownIndicator: () => null,
             }}
+            placeholder=""
             options={light_chassis}
             formatOptionLabel={(a) => (
               <div className="flex justify-center">
-                <img src={a.image} className="max-h-15" alt="" />
+                <img src={a.image} className="max-h-18" alt="" />
               </div>
             )}
           />
@@ -82,7 +85,7 @@ function App() {
             <Select
               unstyled
               classNames={{
-                control: () => 'bg-slate-300 border border-gray h-12 p-1',
+                control: () => 'bg-slate-300 border border-gray h-15 p-1',
                 menu: () => 'bg-slate-200 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
@@ -91,9 +94,10 @@ function App() {
                 DropdownIndicator: () => null,
               }}
               options={suspensions}
+              placeholder=""
               formatOptionLabel={(a) => (
                 <div className="flex justify-center">
-                  <img src={a.image} className="max-h-12" alt="" />
+                  <img src={a.image} className="max-h-15" alt="" />
                 </div>
               )}
             />
@@ -102,7 +106,7 @@ function App() {
             <Select
               unstyled
               classNames={{
-                control: () => 'bg-slate-300 border border-gray h-12 p-1',
+                control: () => 'bg-slate-300 border border-gray h-15 p-1',
                 menu: () => 'bg-slate-200 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
@@ -111,9 +115,10 @@ function App() {
                 DropdownIndicator: () => null,
               }}
               options={armor}
+              placeholder=""
               formatOptionLabel={(a) => (
                 <div className="flex justify-center">
-                  <img src={a.image} className="max-h-12" alt="" />
+                  <img src={a.image} className="max-h-15" alt="" />
                 </div>
               )}
             />
@@ -122,7 +127,7 @@ function App() {
             <Select
               unstyled
               classNames={{
-                control: () => 'bg-slate-300 border border-gray h-12 p-1',
+                control: () => 'bg-slate-300 border border-gray h-15 p-1',
                 menu: () => 'bg-slate-200 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
@@ -131,9 +136,10 @@ function App() {
                 DropdownIndicator: () => null,
               }}
               options={engines}
+              placeholder=""
               formatOptionLabel={(a) => (
                 <div className="flex justify-center">
-                  <img src={a.image} className="max-h-12" alt="" />
+                  <img src={a.image} className="max-h-15" alt="" />
                 </div>
               )}
             />
