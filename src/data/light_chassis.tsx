@@ -6,19 +6,19 @@ const Images = import.meta.glob('../assets/tanks/light/*.png', {
 
 const light_chassis = [
   {
-    value: '1',
+    value: 'Inter war light',
     image: Images['../assets/tanks/light/inter_war_light_tank_chassis.png'],
   },
   {
-    value: '2',
+    value: 'Basic light',
     image: Images['../assets/tanks/light/basic_light_tank_chassis.png'],
   },
   {
-    value: '3',
+    value: 'Improved light',
     image: Images['../assets/tanks/light/improved_light_tank_chassis.png'],
   },
   {
-    value: '4',
+    value: 'Advanced light',
     image: Images['../assets/tanks/light/advanced_light_tank_chassis.png'],
   },
 ];

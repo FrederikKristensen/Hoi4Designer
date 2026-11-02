@@ -1,19 +1,37 @@
 import './App.css';
 import Select from 'react-select';
-import light_chassis from './data/light_chassis';
+import light_tank from './data/light_chassis';
 import engines from './data/tank_engines';
 import suspensions from './data/tank_suspensions';
 import armor from './data/tank_armor';
 import turrets, { type Turrets } from './data/tank_turrets';
 import armanents, { type Armanent } from './data/tank_armanents';
 import { useState } from 'react';
+import NavBar from './components/NavBar';
+import medium_tank from './data/medium_chassis';
+import heavy_tank from './data/heavy_chassis';
+
+export type tankOptions = 'light_tank' | 'medium_tank' | 'heavy_tank';
 
 function App() {
   // Current selected options
   const [selectedTurret, setSelectedturret] = useState<Turrets | null>(null);
 
+  // Stores if we click Tank, Plane or Ship
+  const [mainActive, setMainActive] = useState<string>('Tank');
+  // Stores the subsection of the selected main
+  const [subActive, setSubActive] = useState<tankOptions>('light_tank');
+
+  const chassiOptions = { light_tank, medium_tank, heavy_tank };
+
   return (
     <>
+      <NavBar
+        mainActive={mainActive}
+        setMainActive={setMainActive}
+        subActive={subActive}
+        setSubActive={setSubActive}
+      />
       <div className="grid grid-rows-auto bg-gray-300 m-6 p-2 rounded-md">
         <div className="grid grid-cols-6 gap-x-1 p-1">
           <div className="turret">
@@ -82,7 +100,7 @@ function App() {
               DropdownIndicator: () => null,
             }}
             placeholder=""
-            options={light_chassis}
+            options={chassiOptions[subActive] ?? []}
             formatOptionLabel={(a) => (
               <div className="flex justify-center">
                 <img src={a.image} className="max-h-18" alt="" />
