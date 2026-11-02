@@ -4,22 +4,32 @@ const Images = import.meta.glob('../assets/tanks/turrets/*.png', {
   import: 'default',
 });
 
-const tank_turrets = [
+export type Turrets = {
+  value: string;
+  image: string;
+  armsize: string[];
+};
+
+const tank_turrets: Turrets[] = [
   {
-    value: '1',
+    value: 'Fixed',
     image: Images['../assets/tanks/turrets/tank_light_fixed_superstructure.png'],
+    armsize: ['Small', 'Medium'],
   },
   {
-    value: '2',
+    value: 'Oneman',
     image: Images['../assets/tanks/turrets/tank_light_one_man_turret.png'],
+    armsize: ['Small'],
   },
   {
-    value: '3',
+    value: 'Twoman',
     image: Images['../assets/tanks/turrets/tank_light_two_man_turret.png'],
+    armsize: ['Small'],
   },
   {
-    value: '4',
+    value: 'Threeman',
     image: Images['../assets/tanks/turrets/tank_light_three_man_turret.png'],
+    armsize: ['Small'],
   },
 ];
 

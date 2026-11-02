@@ -4,16 +4,20 @@ import light_chassis from './data/light_chassis';
 import engines from './data/tank_engines';
 import suspensions from './data/tank_suspensions';
 import armor from './data/tank_armor';
-import turrets from './data/tank_turrets';
-import armanents from './data/tank_armanents';
+import turrets, { type Turrets } from './data/tank_turrets';
+import armanents, { type Armanent } from './data/tank_armanents';
+import { useState } from 'react';
 
 function App() {
+  // Current selected options
+  const [selectedTurret, setSelectedturret] = useState<Turrets | null>(null);
+
   return (
     <>
       <div className="grid grid-rows-auto bg-gray-300 m-6 p-2 rounded-md">
         <div className="grid grid-cols-6 gap-x-1 p-1">
           <div className="turret">
-            <Select
+            <Select<Turrets>
               unstyled
               classNames={{
                 control: () => 'bg-slate-300 border border-gray h-15 p-1',
@@ -26,6 +30,9 @@ function App() {
               }}
               placeholder=""
               options={turrets}
+              onChange={(option) => {
+                setSelectedturret(option);
+              }}
               formatOptionLabel={(a) => (
                 <div className="flex justify-center">
                   <img src={a.image} className="max-h-15" alt="" />
@@ -34,19 +41,22 @@ function App() {
             />
           </div>
           <div className="Armanent">
-            <Select
+            <Select<Armanent>
               unstyled
               classNames={{
                 control: () => 'bg-slate-300 border border-gray h-15 p-1',
                 menu: () => 'bg-slate-200 flex justify-center',
-                option: () => 'p-4',
                 input: () => 'caret-transparent',
+                option: (state) => (state.isDisabled ? 'border border-red-600 p-4' : 'p-4'),
               }}
               components={{
                 DropdownIndicator: () => null,
               }}
               placeholder=""
               options={armanents}
+              isOptionDisabled={(option) =>
+                !option.size.some((size) => selectedTurret?.armsize.includes(size))
+              }
               formatOptionLabel={(a) => (
                 <div className="flex justify-center">
                   <img src={a.image} className="max-h-15" alt="" />
