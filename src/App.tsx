@@ -10,6 +10,7 @@ import { useState } from 'react';
 import NavBar from './components/NavBar';
 import medium_tank from './data/medium_chassis';
 import heavy_tank from './data/heavy_chassis';
+import specials from './data/tank_specials';
 
 export type tankOptions = 'light_tank' | 'medium_tank' | 'heavy_tank';
 
@@ -38,7 +39,7 @@ function App() {
             <Select<Turrets>
               unstyled
               classNames={{
-                control: () => 'bg-slate-300 border border-gray h-15 p-1',
+                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
                 menu: () => 'bg-slate-200 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
@@ -62,7 +63,7 @@ function App() {
             <Select<Armanent>
               unstyled
               classNames={{
-                control: () => 'bg-slate-300 border border-gray h-15 p-1',
+                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
                 menu: () => 'bg-slate-200 flex justify-center',
                 input: () => 'caret-transparent',
                 option: (state) => (state.isDisabled ? 'border border-red-600 p-4' : 'p-4'),
@@ -82,16 +83,96 @@ function App() {
               )}
             />
           </div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
+          <div className="Special 1">
+            <Select
+              unstyled
+              classNames={{
+                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
+                menu: () => 'bg-slate-200 flex justify-center',
+                option: () => 'p-4',
+                input: () => 'caret-transparent',
+              }}
+              components={{
+                DropdownIndicator: () => null,
+              }}
+              options={specials}
+              placeholder=""
+              formatOptionLabel={(a) => (
+                <div className="flex justify-center">
+                  <img src={a.image} className="max-h-15" alt="" />
+                </div>
+              )}
+            />
+          </div>
+          <div className="Special 2">
+            <Select
+              unstyled
+              classNames={{
+                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
+                menu: () => 'bg-slate-200 flex justify-center',
+                option: () => 'p-4',
+                input: () => 'caret-transparent',
+              }}
+              components={{
+                DropdownIndicator: () => null,
+              }}
+              options={specials}
+              placeholder=""
+              formatOptionLabel={(a) => (
+                <div className="flex justify-center">
+                  <img src={a.image} className="max-h-15" alt="" />
+                </div>
+              )}
+            />
+          </div>
+          <div className="Special 3">
+            <Select
+              unstyled
+              classNames={{
+                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
+                menu: () => 'bg-slate-200 flex justify-center',
+                option: () => 'p-4',
+                input: () => 'caret-transparent',
+              }}
+              components={{
+                DropdownIndicator: () => null,
+              }}
+              options={specials}
+              placeholder=""
+              formatOptionLabel={(a) => (
+                <div className="flex justify-center">
+                  <img src={a.image} className="max-h-15" alt="" />
+                </div>
+              )}
+            />
+          </div>
+          <div className="Special 4">
+            <Select
+              unstyled
+              classNames={{
+                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
+                menu: () => 'bg-slate-200 flex justify-center',
+                option: () => 'p-4',
+                input: () => 'caret-transparent',
+              }}
+              components={{
+                DropdownIndicator: () => null,
+              }}
+              options={specials}
+              placeholder=""
+              formatOptionLabel={(a) => (
+                <div className="flex justify-center">
+                  <img src={a.image} className="max-h-15" alt="" />
+                </div>
+              )}
+            />
+          </div>
         </div>
         <div className="Chassis p-1 m-0">
           <Select
             unstyled
             classNames={{
-              control: () => 'bg-slate-300 border border-gray h-18 p-1',
+              control: () => 'bg-mist-700/70 border border-gray h-18 p-1',
               menu: () => 'bg-slate-200 flex justify-center',
               option: () => 'p-4',
               input: () => 'caret-transparent',
@@ -113,7 +194,7 @@ function App() {
             <Select
               unstyled
               classNames={{
-                control: () => 'bg-slate-300 border border-gray h-15 p-1',
+                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
                 menu: () => 'bg-slate-200 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
@@ -134,7 +215,7 @@ function App() {
             <Select
               unstyled
               classNames={{
-                control: () => 'bg-slate-300 border border-gray h-15 p-1',
+                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
                 menu: () => 'bg-slate-200 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
@@ -155,7 +236,7 @@ function App() {
             <Select
               unstyled
               classNames={{
-                control: () => 'bg-slate-300 border border-gray h-15 p-1',
+                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
                 menu: () => 'bg-slate-200 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
