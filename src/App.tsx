@@ -38,14 +38,14 @@ function App() {
         subActive={subActive}
         setSubActive={setSubActive}
       />
-      <div className="grid grid-rows-auto bg-gray-300 m-6 p-2 rounded-md">
+      <div className="grid grid-rows-auto bg-gray-500 m-6 p-2 rounded-md">
         <div className="grid grid-cols-6 gap-x-1 p-1">
           <div className="turret">
             <Select<Turrets>
               unstyled
               classNames={{
-                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
-                menu: () => 'bg-slate-200 flex justify-center',
+                control: () => 'bg-mist-400/30 border border-gray-700 h-15 p-1',
+                menu: () => 'bg-slate-400 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
               }}
@@ -68,8 +68,8 @@ function App() {
             <Select<Armanent>
               unstyled
               classNames={{
-                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
-                menu: () => 'bg-slate-200 flex justify-center',
+                control: () => 'bg-mist-400/30 border border-gray-700 h-15 p-1',
+                menu: () => 'bg-slate-400 flex justify-center',
                 input: () => 'caret-transparent',
                 option: (state) => (state.isDisabled ? 'border border-red-600 p-4' : 'p-4'),
               }}
@@ -92,8 +92,8 @@ function App() {
             <Select
               unstyled
               classNames={{
-                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
-                menu: () => 'bg-slate-200 flex justify-center',
+                control: () => 'bg-mist-400/30 border border-gray-700 h-15 p-1',
+                menu: () => 'bg-slate-400 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
               }}
@@ -113,8 +113,8 @@ function App() {
             <Select
               unstyled
               classNames={{
-                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
-                menu: () => 'bg-slate-200 flex justify-center',
+                control: () => 'bg-mist-400/30 border border-gray-700 h-15 p-1',
+                menu: () => 'bg-slate-400 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
               }}
@@ -134,8 +134,8 @@ function App() {
             <Select
               unstyled
               classNames={{
-                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
-                menu: () => 'bg-slate-200 flex justify-center',
+                control: () => 'bg-mist-400/30 border border-gray-700 h-15 p-1',
+                menu: () => 'bg-slate-400 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
               }}
@@ -155,8 +155,8 @@ function App() {
             <Select
               unstyled
               classNames={{
-                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
-                menu: () => 'bg-slate-200 flex justify-center',
+                control: () => 'bg-mist-400/30 border border-gray-700 h-15 p-1',
+                menu: () => 'bg-slate-400 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
               }}
@@ -177,8 +177,8 @@ function App() {
           <Select
             unstyled
             classNames={{
-              control: () => 'bg-mist-700/70 border border-gray h-18 p-1',
-              menu: () => 'bg-slate-200 flex justify-center',
+              control: () => 'bg-mist-400/30 border border-gray-700 h-15 p-1',
+              menu: () => 'bg-slate-400 flex justify-center',
               option: () => 'p-4',
               input: () => 'caret-transparent',
             }}
@@ -199,8 +199,8 @@ function App() {
             <Select
               unstyled
               classNames={{
-                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
-                menu: () => 'bg-slate-200 flex justify-center',
+                control: () => 'bg-mist-400/30 border border-gray-700 h-15 p-1',
+                menu: () => 'bg-slate-400 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
               }}
@@ -220,8 +220,8 @@ function App() {
             <Select
               unstyled
               classNames={{
-                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
-                menu: () => 'bg-slate-200 flex justify-center',
+                control: () => 'bg-mist-400/30 border border-gray-700 h-15 p-1',
+                menu: () => 'bg-slate-400 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
               }}
@@ -241,8 +241,8 @@ function App() {
             <Select
               unstyled
               classNames={{
-                control: () => 'bg-mist-700/70 border border-gray h-15 p-1',
-                menu: () => 'bg-slate-200 flex justify-center',
+                control: () => 'bg-mist-400/30 border border-gray-700 h-15 p-1',
+                menu: () => 'bg-slate-400 flex justify-center',
                 option: () => 'p-4',
                 input: () => 'caret-transparent',
               }}
@@ -258,12 +258,14 @@ function App() {
               )}
             />
           </div>
-          <Ticks
-            engineTicks={engineTicks}
-            setEngineTicks={setEngineTicks}
-            armorTicks={armorTicks}
-            setArmorTicks={setArmorTicks}
-          />
+          <div className="col-span-2">
+            <Ticks
+              engineTicks={engineTicks}
+              setEngineTicks={setEngineTicks}
+              armorTicks={armorTicks}
+              setArmorTicks={setArmorTicks}
+            />
+          </div>
         </div>
       </div>
     </>
