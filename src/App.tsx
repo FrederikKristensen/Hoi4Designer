@@ -11,6 +11,7 @@ import NavBar from './components/NavBar';
 import medium_tank from './data/medium_chassis';
 import heavy_tank from './data/heavy_chassis';
 import specials from './data/tank_specials';
+import Ticks from './components/Ticks';
 
 export type tankOptions = 'light_tank' | 'medium_tank' | 'heavy_tank';
 
@@ -24,6 +25,10 @@ function App() {
   const [subActive, setSubActive] = useState<tankOptions>('light_tank');
 
   const chassiOptions = { light_tank, medium_tank, heavy_tank };
+
+  //Ticks of engine and armor stored
+  const [engineTicks, setEngineTicks] = useState(0);
+  const [armorTicks, setArmorTicks] = useState(0);
 
   return (
     <>
@@ -253,8 +258,12 @@ function App() {
               )}
             />
           </div>
-          <div className="Engine ticks">Engine 0</div>
-          <div className="Armor ticks">Armor 0</div>
+          <Ticks
+            engineTicks={engineTicks}
+            setEngineTicks={setEngineTicks}
+            armorTicks={armorTicks}
+            setArmorTicks={setArmorTicks}
+          />
         </div>
       </div>
     </>
