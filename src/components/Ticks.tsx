@@ -15,7 +15,7 @@ const Ticks = ({ engineTicks, setEngineTicks, armorTicks, setArmorTicks }: Ticks
             <button
               className="border-2 rounded-full"
               onClick={() => {
-                setEngineTicks((e) => e - 1);
+                setEngineTicks((e) => Math.max(0, e - 1));
               }}
             >
               -
@@ -37,7 +37,7 @@ const Ticks = ({ engineTicks, setEngineTicks, armorTicks, setArmorTicks }: Ticks
             <button
               className="border-2 rounded-full"
               onClick={() => {
-                setArmorTicks((a) => a - 1);
+                setArmorTicks((e) => Math.max(0, e - 1));
               }}
             >
               -
